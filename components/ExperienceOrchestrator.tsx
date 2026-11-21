@@ -159,7 +159,7 @@ function UnlockAnimation() {
 export default function ExperienceOrchestrator({ children }: ExperienceOrchestratorProps) {
   const [phase, setPhase] = useState<Phase>('loading');
   const [simulatedTarget, setSimulatedTarget] = useState<Date | undefined>(undefined);
-  const [devMinimized, setDevMinimized] = useState<boolean>(true);
+  const [devMinimized, setDevMinimized] = useState<boolean>(false);
   const unlockTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   /* ---------- initial phase determination ---------- */
@@ -492,8 +492,8 @@ export default function ExperienceOrchestrator({ children }: ExperienceOrchestra
         </motion.div>
       )}
 
-      {/* TEMPORARY DEVELOPMENT TESTING CONTROLS */}
-      {(
+      {/* DEVELOPMENT TESTING CONTROLS (Removed entirely in Vercel production) */}
+      {process.env.NODE_ENV !== 'production' && (
         <>
           {devMinimized ? (
             <button

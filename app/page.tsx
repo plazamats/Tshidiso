@@ -78,7 +78,6 @@ function SectionIntro({ eyebrow, title, text }: { eyebrow: string; title: string
 /* ─── Birthday Website Universe ─── */
 function BirthdayUniverse() {
   const [entered, setEntered] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const [muted, setMuted] = useState(true);
   const [letterOpen, setLetterOpen] = useState(false);
   const [cakeLit, setCakeLit] = useState(true);
@@ -117,15 +116,6 @@ function BirthdayUniverse() {
     document.body.style.overflow = entered ? '' : 'hidden';
     return () => { document.body.style.overflow = ''; };
   }, [entered]);
-
-  useEffect(() => {
-    if (!menuOpen) return;
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setMenuOpen(false);
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [menuOpen]);
 
   /* Mount the 3D universe only after entry, once the browser is idle */
   useEffect(() => {
@@ -325,7 +315,7 @@ function BirthdayUniverse() {
   }, [entered]);
 
   const onPointerMove = (e: React.PointerEvent) => {
-    if (!entered || (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches)) return;
+    if (!entered) return;
     const now = performance.now();
     if (now - lastPointerRef.current < 180) return;
     lastPointerRef.current = now;
@@ -378,32 +368,19 @@ function BirthdayUniverse() {
       <Stars />
 
       {/* ─── NAV ─── */}
-      <nav
-        className={menuOpen ? 'nav-open' : ''}
-        style={{ opacity: entered ? undefined : 0, pointerEvents: entered ? undefined : 'none' }}
-      >
+      <nav style={{ opacity: entered ? undefined : 0, pointerEvents: entered ? undefined : 'none' }}>
         <a className="brand" href="#top">T<span>♥</span>T</a>
-        <button
-          className="nav-toggle"
-          type="button"
-          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-          aria-expanded={menuOpen}
-          aria-controls="primary-navigation"
-          onClick={() => setMenuOpen(open => !open)}
-        >
-          <span /><span /><span />
-        </button>
-        <div className="nav-links" id="primary-navigation">
-          <a href="#story" onClick={() => setMenuOpen(false)}>Our story</a>
-          <a href="#constellation" onClick={() => setMenuOpen(false)}>Stars</a>
-          <a href="#timer" onClick={() => setMenuOpen(false)}>Our time</a>
-          <a href="#reasons" onClick={() => setMenuOpen(false)}>Reasons</a>
-          <a href="#resonance" onClick={() => setMenuOpen(false)}>Soul</a>
-          <a href="#jar" onClick={() => setMenuOpen(false)}>Daily Love</a>
-          <a href="#rose" onClick={() => setMenuOpen(false)}>Forever Rose</a>
-          <a href="#lanterns" onClick={() => setMenuOpen(false)}>Lanterns</a>
-          <a href="#whisper" onClick={() => setMenuOpen(false)}>Whisper</a>
-          <a href="#finale" onClick={() => setMenuOpen(false)}>Forever</a>
+        <div className="nav-links">
+          <a href="#story">Our story</a>
+          <a href="#constellation">Stars</a>
+          <a href="#timer">Our time</a>
+          <a href="#reasons">Reasons</a>
+          <a href="#resonance">Soul</a>
+          <a href="#jar">Daily Love</a>
+          <a href="#rose">Forever Rose</a>
+          <a href="#lanterns">Lanterns</a>
+          <a href="#whisper">Whisper</a>
+          <a href="#finale">Forever</a>
         </div>
         <button className="sound" onClick={toggleSound} aria-label="Toggle sound">
           {muted ? '♩' : '♫'} <span>{muted ? 'Sound off' : 'Sound on'}</span>
