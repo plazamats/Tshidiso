@@ -492,8 +492,8 @@ export default function ExperienceOrchestrator({ children }: ExperienceOrchestra
         </motion.div>
       )}
 
-      {/* DEVELOPMENT TESTING CONTROLS (Removed entirely in Vercel production) */}
-      {process.env.NODE_ENV !== 'production' && (
+      {/* TEMPORARY DEVELOPMENT TESTING CONTROLS */}
+      {(
         <>
           {devMinimized ? (
             <button

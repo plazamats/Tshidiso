@@ -2814,7 +2814,16 @@ nav {
 }
 
 @media (max-width: 650px) {
-  .eo-dev-pill, .eo-dev-box { display: none !important; }
+  .eo-dev-pill {
+    bottom: max(12px, env(safe-area-inset-bottom));
+    right: 12px;
+    max-width: calc(100vw - 24px);
+  }
+  .eo-dev-box {
+    bottom: max(12px, env(safe-area-inset-bottom));
+    right: 12px;
+    max-height: calc(100dvh - max(24px, env(safe-area-inset-top) + env(safe-area-inset-bottom)));
+  }
 
   .hero-copy { min-width: 0; }
   .hero-card {
