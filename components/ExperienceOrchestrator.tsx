@@ -159,7 +159,7 @@ function UnlockAnimation() {
 export default function ExperienceOrchestrator({ children }: ExperienceOrchestratorProps) {
   const [phase, setPhase] = useState<Phase>('loading');
   const [simulatedTarget, setSimulatedTarget] = useState<Date | undefined>(undefined);
-  const [devMinimized, setDevMinimized] = useState<boolean>(false);
+  const [devMinimized, setDevMinimized] = useState<boolean>(true);
   const unlockTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   /* ---------- initial phase determination ---------- */

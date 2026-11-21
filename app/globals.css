@@ -2818,11 +2818,213 @@ nav {
     bottom: max(12px, env(safe-area-inset-bottom));
     right: 12px;
     max-width: calc(100vw - 24px);
+    min-height: 44px;
+    justify-content: center;
   }
   .eo-dev-box {
     bottom: max(12px, env(safe-area-inset-bottom));
     right: 12px;
     max-height: calc(100dvh - max(24px, env(safe-area-inset-top) + env(safe-area-inset-bottom)));
+  }
+
+  /* Mobile cinematic art direction */
+  .floating-music-player {
+    bottom: max(76px, calc(env(safe-area-inset-bottom) + 76px));
+    right: 12px;
+  }
+  .player-disc-btn {
+    width: 50px;
+    height: 50px;
+    padding: 4px;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .vinyl-disc { width: 42px; height: 42px; }
+  .player-meta,
+  .player-dedication { display: none; }
+
+  .kiss-widget {
+    bottom: max(12px, env(safe-area-inset-bottom));
+    left: 12px;
+  }
+  .kiss-btn {
+    width: 50px;
+    height: 50px;
+  }
+  .eo-dev-pill {
+    bottom: max(12px, env(safe-area-inset-bottom));
+  }
+  .eo-dev-box {
+    left: 12px;
+    width: calc(100vw - 24px);
+  }
+
+  .hero {
+    min-height: 100svh;
+    padding: 74px 16px 64px;
+  }
+  .hero-copy {
+    max-width: 420px;
+  }
+  .hero-card {
+    width: 100%;
+    min-height: 228px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 34px 14px 28px;
+  }
+  .hero-card .eyebrow {
+    margin-bottom: 12px;
+  }
+  .hero h1 {
+    font-size: clamp(40px, 11vw, 48px);
+    line-height: 0.96;
+  }
+  .hero h1 em {
+    display: block;
+    width: 100%;
+    max-width: 330px;
+    margin-inline: auto;
+    font-size: clamp(38px, 10.5vw, 46px);
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+  .hero h1 span {
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    margin: 16px 0;
+  }
+  .hero-orbit {
+    width: 58px;
+    height: 58px;
+    top: -29px;
+  }
+  .hero-orbit span { font-size: 22px; }
+  .birthday-crown {
+    margin: 12px auto 0;
+    line-height: 1.35;
+  }
+  .button {
+    min-height: 48px;
+  }
+  .moon {
+    width: 72vw;
+    height: 72vw;
+    right: -32vw;
+    top: 9%;
+  }
+  .floating.rose { left: 2%; top: 64%; font-size: 42px; }
+  .floating.butterfly { right: 7%; top: 22%; font-size: 24px; }
+  .floating.lantern { left: 14%; top: 18%; font-size: 22px; }
+  .floating.star-float { right: 4%; top: 66%; font-size: 18px; }
+  .hero-bottom { bottom: 10px; }
+
+  .section-intro {
+    max-width: 420px;
+    text-align: center;
+  }
+  .section h2 {
+    font-size: clamp(38px, 11.5vw, 48px);
+  }
+  .section-text {
+    max-width: 340px;
+  }
+  .section {
+    padding-top: 76px;
+    padding-bottom: 76px;
+  }
+
+  .love-timer-wrap,
+  .moon-phase,
+  .quiz-wrap,
+  .timer-section .love-timer-wrap {
+    width: 100%;
+  }
+  .love-timer-message {
+    width: 100%;
+    padding: 24px 16px;
+  }
+
+  .gallery .section-intro { margin-bottom: 38px; }
+  .photo-wall {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    height: auto;
+    max-width: 390px;
+  }
+  .photo {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    aspect-ratio: 0.82;
+    min-height: 0;
+    transform: none;
+  }
+  .photo-1,
+  .photo-2,
+  .photo-3,
+  .photo-4,
+  .photo-5 {
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+  }
+  .photo-5 {
+    grid-column: 1 / -1;
+    width: calc(50% - 6px);
+    justify-self: center;
+  }
+  .photo span {
+    bottom: 12px;
+    left: 12px;
+    font-size: 17px;
+  }
+  .photo i {
+    right: 10px;
+    bottom: 11px;
+  }
+
+  .poem-card {
+    max-width: 420px;
+    width: 100%;
+    margin-inline: auto;
+  }
+  .paper {
+    width: min(420px, 100%);
+    min-height: 430px;
+    padding: 52px 22px 38px;
+  }
+
+  .heart-wrap {
+    width: 100%;
+  }
+  .big-heart {
+    width: 190px;
+    height: 190px;
+  }
+  .big-heart i {
+    left: 50%;
+  }
+
+  .wish-glass {
+    border-radius: 24px;
+  }
+  .wish-text {
+    margin: 28px auto;
+  }
+
+  .fuse-title {
+    font-size: 22px;
+  }
+  .fuse-stage {
+    height: 190px;
+  }
+  .love-languages-wrap {
+    width: 100%;
   }
 
   .hero-copy { min-width: 0; }
@@ -2901,6 +3103,16 @@ nav {
   .lc-root {
     padding: max(16px, env(safe-area-inset-top)) 12px max(16px, env(safe-area-inset-bottom));
   }
+  .lc-title {
+    max-width: 360px;
+    margin-inline: auto;
+    font-size: clamp(28px, 8.5vw, 38px);
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+  .lc-badge {
+    font-size: 9px;
+  }
   .lc-padlock-wrap { margin-bottom: 12px; }
   .lc-padlock-glow { width: 130px; height: 130px; }
   .lc-padlock-svg { width: 104px; height: 104px; }
@@ -2925,9 +3137,53 @@ nav {
 
   .intro-gate { padding: max(24px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom)); }
   .gate-inner { width: 100%; max-height: 100dvh; overflow-y: auto; }
-  .gate-title { font-size: clamp(38px, 13vw, 58px); line-height: 1.05; }
-  .gate-subtitle { max-width: 320px; margin-left: auto; margin-right: auto; font-size: 15px; }
-  .gate-seal { width: 84px; height: 84px; }
+  .gate-title {
+    font-size: clamp(52px, 15vw, 68px);
+    line-height: 0.98;
+    margin: 6px 0 18px;
+  }
+  .gate-subtitle {
+    max-width: 300px;
+    margin: -2px auto 16px;
+    font-size: 14px;
+  }
+  .gate-seal { width: 78px; height: 78px; }
+
+  .dc-hud-top {
+    left: 12px;
+    right: 12px;
+    top: max(8px, env(safe-area-inset-top));
+  }
+  .dc-hud-bottom {
+    left: 12px;
+    right: 12px;
+    bottom: max(8px, env(safe-area-inset-bottom));
+  }
+  .dc-act-indicator {
+    font-size: 8px;
+    letter-spacing: 0.16em;
+  }
+  .dc-btn-hud {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 8px 10px;
+  }
+  .dc-btn-hud span:last-child {
+    display: none;
+  }
+  .dc-letterbox-top {
+    height: 22px;
+  }
+  .dc-letterbox-bottom {
+    height: 24px;
+  }
+  .dc-timeline-meta {
+    font-size: 8px;
+    letter-spacing: 0.1em;
+  }
+  .dc-sound-prompt {
+    top: 8px;
+  }
 
   .eo-light-flare { width: 220px; height: 220px; }
   .eo-heart-split-wrap { width: 120px; height: 120px; }
@@ -2942,4 +3198,30 @@ nav {
   .dc-birthday-banner { font-size: clamp(34px, 10vw, 48px); }
   .dc-vow-text { font-size: 16px; line-height: 1.5; }
   .dc-scene-eyebrow { margin-bottom: 14px; letter-spacing: 0.18em; }
+
+  .modal {
+    padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom));
+  }
+  .modal > button {
+    top: max(12px, env(safe-area-inset-top));
+    right: 12px;
+    z-index: 5;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(7, 5, 26, 0.78);
+  }
+  .modal-photo {
+    width: min(350px, calc(100vw - 24px));
+    max-height: calc(100dvh - 48px);
+  }
+  .modal-photo span {
+    font-size: 24px;
+  }
+  .modal-nav {
+    right: 12px;
+    bottom: 12px;
+  }
 }
